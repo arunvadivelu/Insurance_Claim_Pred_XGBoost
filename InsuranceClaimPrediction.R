@@ -71,6 +71,14 @@ df <- cbind(target=df$target,df[,variabl_n_red],factor_df)
 rm(factor_df)
 
 ##########################################################################################################################
+# handling unbalanced data
+
+library(DMwR)
+set.seed(9560)
+df <- SMOTE(target ~ ., data  = df)                         
+table(df$target) 
+
+##########################################################################################################################
 # Prepare Test data
 
 
